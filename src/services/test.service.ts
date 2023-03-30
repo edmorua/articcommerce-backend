@@ -4,7 +4,7 @@ import { Test } from "../models/test.model";
 class TestService {
   async create(test: Test): Promise<Test> {
     console.log({ test });
-    const newTest: Test = await Test.create({ name: test.name, size: test.size, color: test.color, date: new Date() });
+    const newTest: Test = await Test.create({ ...test, date: new Date() });
     return newTest;
   }
 
