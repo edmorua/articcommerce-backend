@@ -6,6 +6,7 @@ class TestController {
   async getTestById(req: express.Request, res: express.Response) {
     const data = req.params;
     const { id } = data;
+    console.log('testito');
     if (!id) throw new Error('no id found in the request');
     const test = await testService.getTestById(Number(id));
     if (test) return res.status(200).json(test);
