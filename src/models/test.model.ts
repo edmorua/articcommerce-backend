@@ -5,7 +5,7 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
   timestamps: false,
   tableName: "Test",
 })
-export class Test extends Model {
+export default class Test extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,

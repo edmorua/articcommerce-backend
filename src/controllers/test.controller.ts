@@ -1,5 +1,5 @@
 import express from 'express';
-import { Test } from '../models/test.model';
+import Test  from '../models/test.model';
 import testService from '../services/test.service';
 
 class TestController {
@@ -26,5 +26,5 @@ class TestController {
     return res.status(200).json(allTest);
   }
 }
-
-export default new TestController();
+const testController = new TestController();
+export default testController;

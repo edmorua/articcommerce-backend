@@ -1,4 +1,4 @@
-import { Test } from "../models/test.model";
+import Test  from "../models/test.model";
 
 
 class TestService {
