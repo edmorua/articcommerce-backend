@@ -1,10 +1,11 @@
 import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import User from './user.model';
 
 @Table({
   timestamps: true,
   tableName: "Address",
 })
-export default class Product extends Model {
+export default class Address extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
@@ -53,3 +54,7 @@ export default class Product extends Model {
   })
   ExteriorCode!: string;
 }
+
+Address.belongsTo(User, {
+  foreignKey: 'UserId'
+})
