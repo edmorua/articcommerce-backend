@@ -10,5 +10,4 @@ const sequelize = new Sequelize({
   models: [__dirname + '/models/**.model.ts'],
   sync: { force: true }
 });
-console.log({ __dirname });
 export default sequelize;

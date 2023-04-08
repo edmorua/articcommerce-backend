@@ -1,4 +1,5 @@
 export const MainRoutes = {
   TEST: '/test',
-  USER: '/user'
+  USER: '/user',
+  PRODUCT: '/product',
 };

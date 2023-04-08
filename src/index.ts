@@ -4,9 +4,10 @@ dotenv.config();
 import express, { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import sequelize from './db.config';
+import { MainRoutes } from './utils/RoutePaths'; 
 import testRoute from './routes/test.route';
 import userRoute from './routes/user.route';
-import { MainRoutes } from './utils/RoutePaths'; 
+import productRoute from './routes/product.route';
 
 const PORT = process.env.PORT || 4040;
 const app: Express = express();
@@ -34,6 +35,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use(MainRoutes.TEST, testRoute);
 app.use(MainRoutes.USER, userRoute);
+app.use(MainRoutes.PRODUCT, productRoute);
 
 
 

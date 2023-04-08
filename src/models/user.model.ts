@@ -10,31 +10,40 @@ export default class User extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  name!: string;
+  Name!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false,
+    allowNull: true,
   })
-  username!: string;
+  ProfileURL: string | undefined;
   
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    validate: {
+       isEmail: true || { msg: 'Invalid Email'}
+    }
   })
-  email!: string;
+  Email!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    validate: {
+      len: [8,99],
+    }
   })
-  password!: string;
+  Password!: string;
 
   @Column({
     type: DataType.DATE,
     allowNull: false,
+    validate: {
+      isDate: true,
+    }
   })
-  date!: Date;
+  Date!: Date;
 
   @Column({
     type: DataType.STRING,
@@ -43,5 +52,11 @@ export default class User extends Model {
       isIn: [['AMDIN, CLIENT']],
     },
   })
-  role!: string;
+  Role!: string;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: false,
+  })
+  BirthDay!: Date;
 }
