@@ -1,6 +1,6 @@
 
 import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
-import Address from "./.model";
+import Address from "./address.model";
 
 @Table({
   timestamps: true,
