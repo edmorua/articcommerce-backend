@@ -9,30 +9,29 @@ export default class Product extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  name!: string;
+  Name!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  code!: string;
+  Code!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  sku!: string;
+  SKU!: string;
 
   @Column({
     type: DataType.FLOAT,
     allowNull: false,
   })
-  price!: number;
+  Price!: number;
 
   @Column({
-    type: DataType.STRING,
+    type: DataType.INTEGER,
     allowNull: true,
   })
-  imageURL!: string;
-
+  Quantity!: number;
 }
