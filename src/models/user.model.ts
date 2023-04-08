@@ -1,12 +1,15 @@
 
 import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
 import Address from "./address.model";
+import UserI from "../interfaces/user.interface";
+import { Optional } from "sequelize";
 
+interface UserAttributes extends Optional<UserI, 'id'> {}
 @Table({
-  timestamps: true,
+  timestamps: false,
   tableName: "User",
 })
-export default class User extends Model {
+export default class User extends Model<UserAttributes> {
   @Column({
     type: DataType.STRING,
     allowNull: false,
@@ -41,7 +44,7 @@ export default class User extends Model {
     type: DataType.STRING,
     allowNull: false,
     validate: {
-      isIn: [['AMDIN, CLIENT']],
+      isIn: [['ADMIN', 'CLIENT']],
     },
   })
   role!: string;

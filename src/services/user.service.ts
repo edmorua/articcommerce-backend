@@ -4,7 +4,7 @@ import UserI from '../interfaces/user.interface';
 class UserService {
   async create(user: UserI): Promise<User> {
     try {
-      const newUser: User = await User.create({ ...user, date: new Date() });
+      const newUser: User = await User.create({ ...user });
       return newUser;
     } catch (error: any) {
       console.error({ error });
