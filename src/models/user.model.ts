@@ -11,13 +11,13 @@ export default class User extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  Name!: string;
+  name!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  ProfileURL: string | undefined;
+  profileURL: string | undefined;
   
   @Column({
     type: DataType.STRING,
@@ -26,7 +26,7 @@ export default class User extends Model {
        isEmail: true || { msg: 'Invalid Email'}
     }
   })
-  Email!: string;
+  email!: string;
 
   @Column({
     type: DataType.STRING,
@@ -35,16 +35,7 @@ export default class User extends Model {
       len: [8,99],
     }
   })
-  Password!: string;
-
-  @Column({
-    type: DataType.DATE,
-    allowNull: false,
-    validate: {
-      isDate: true,
-    }
-  })
-  Date!: Date;
+  password!: string;
 
   @Column({
     type: DataType.STRING,
@@ -53,14 +44,14 @@ export default class User extends Model {
       isIn: [['AMDIN, CLIENT']],
     },
   })
-  Role!: string;
+  role!: string;
 
   @Column({
     type: DataType.DATE,
     allowNull: false,
   })
-  BirthDay!: Date;
+  birthDate!: Date;
 
   @HasMany(() => Address)
-  addresses!: Address[];
+  address!: Address[];
 }

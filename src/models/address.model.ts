@@ -10,13 +10,13 @@ class Address extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  State!: string;
+  state!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  City!: string;
+  city!: string;
 
   @Column({
     type: DataType.STRING,
@@ -28,37 +28,37 @@ class Address extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  Street!: string;
+  street!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  Neighborhood!: string;
+  neighborhood!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  AdditionalData!: string
+  additionalData!: string
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  InteriorCode: string | undefined;
+  interiorCode: string | undefined;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  ExteriorCode!: string;
+  exteriorCode!: string;
 
   @ForeignKey(() => User)
-  UserId!: number;
+  userId!: number;
 
   @BelongsTo(() => User)
-  User!: User;
+  user!: User;
 }
 
 export default Address;

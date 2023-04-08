@@ -9,29 +9,29 @@ export default class Product extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  Name!: string;
+  name!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  Code!: string;
+  code!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  SKU!: string;
+  sku!: string;
 
   @Column({
     type: DataType.FLOAT,
     allowNull: false,
   })
-  Price!: number;
+  price!: number;
 
   @Column({
     type: DataType.INTEGER,
     allowNull: true,
   })
-  Quantity!: number;
+  quantity!: number;
 }
