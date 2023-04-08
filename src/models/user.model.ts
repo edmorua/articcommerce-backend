@@ -1,15 +1,15 @@
 
-import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
+import { Table, Column, DataType, HasMany, Model } from "sequelize-typescript";
+import { Optional } from "sequelize";
 import Address from "./address.model";
 import UserI from "../interfaces/user.interface";
-import { Optional } from "sequelize";
 
 interface UserAttributes extends Optional<UserI, 'id'> {}
 @Table({
   timestamps: false,
   tableName: "User",
 })
-export default class User extends Model<UserAttributes> {
+export default class User extends Model<UserI,UserAttributes> {
   @Column({
     type: DataType.STRING,
     allowNull: false,
