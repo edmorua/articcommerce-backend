@@ -1,5 +1,6 @@
 
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
+import Address from "./.model";
 
 @Table({
   timestamps: true,
@@ -59,4 +60,7 @@ export default class User extends Model {
     allowNull: false,
   })
   BirthDay!: Date;
+
+  @HasMany(() => Address)
+  addresses!: Address[];
 }
