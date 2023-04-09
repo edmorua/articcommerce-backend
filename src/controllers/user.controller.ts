@@ -5,6 +5,8 @@ import userService from '../services/user.service';
 class UserController {
   async getUserById(req: express.Request, res: express.Response) {
     const data = req.params;
+    console.log({ req });
+    console.log({ data });
     const { id } = data;
     try {
       if (!id) throw new ErrorResponse(400, 'No id found in the request');

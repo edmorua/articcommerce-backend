@@ -1,4 +1,5 @@
 import User from '../models/user.model';
+import Address from '../models/address.model';
 import UserI from '../interfaces/user.interface';
 
 class UserService {
@@ -14,7 +15,7 @@ class UserService {
 
   async getUserById(id: number): Promise<User | null> {
     try {
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(id, { include: Address });
       return user;
     } catch (error: any) {
       console.error({ error });

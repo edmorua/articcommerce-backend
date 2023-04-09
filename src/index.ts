@@ -8,6 +8,7 @@ import { MainRoutes } from './utils/RoutePaths';
 import testRoute from './routes/test.route';
 import userRoute from './routes/user.route';
 import productRoute from './routes/product.route';
+import addressRoute from './routes/address.route';
 
 const PORT = process.env.PORT || 4040;
 const app: Express = express();
@@ -36,6 +37,7 @@ app.get('/', (req: Request, res: Response) => {
 app.use(MainRoutes.TEST, testRoute);
 app.use(MainRoutes.USER, userRoute);
 app.use(MainRoutes.PRODUCT, productRoute);
+app.use(MainRoutes.ADDRESS, addressRoute)
 
 
 
