@@ -1,4 +1,6 @@
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import { Table, Model, Column, DataType, BelongsToMany } from 'sequelize-typescript';
+import Product from './product.model';
+import ProductCategory from './product-category.model';
 
 @Table({
   timestamps: true,
@@ -17,6 +19,9 @@ class Category extends Model  {
     allowNull: false,
   })
   code!: string;
+
+  @BelongsToMany(() => Product, () => ProductCategory)
+  products!: Array<Product & { ProductCategory: ProductCategory }>
 }
 
 export default Category;
