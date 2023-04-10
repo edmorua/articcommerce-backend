@@ -1,4 +1,4 @@
-import { Table, Model, Column, DataType, BelongsToMany } from 'sequelize-typescript';
+import { Table, Model, Column, DataType, BelongsToMany, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import Product from './product.model';
 import ProductCategory from './product-category.model';
 
@@ -19,6 +19,15 @@ class Category extends Model  {
     allowNull: false,
   })
   code!: string;
+
+  @ForeignKey(() => Category)
+  parentCategoryId?: number;
+
+  @BelongsTo(() => Category, 'parentCategoryId')
+  parentCategory?: Category;
+
+  @HasMany(() => Category, 'parentCategoryId')
+  childCategories?: Category[];
 
   @BelongsToMany(() => Product, () => ProductCategory)
   products!: Array<Product & { ProductCategory: ProductCategory }>
