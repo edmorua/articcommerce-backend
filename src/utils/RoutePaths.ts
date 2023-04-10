@@ -3,4 +3,5 @@ export const MainRoutes = {
   USER: '/user',
   PRODUCT: '/product',
   ADDRESS: '/address',
+  CATEGORY: '/category'
 };

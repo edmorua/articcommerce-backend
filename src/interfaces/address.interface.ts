@@ -10,8 +10,8 @@ interface AddressI {
   additionalData?: string;
   interiorCode: string;
   exteriorCode?: string;
-  userId: number;
-  user: UserI
+  userId?: number;
+  user?: UserI
 }
 
 export default AddressI;

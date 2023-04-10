@@ -21,6 +21,7 @@ class Category extends Model  {
   code!: string;
 
   @ForeignKey(() => Category)
+  @Column({ type: DataType.INTEGER })
   parentCategoryId?: number;
 
   @BelongsTo(() => Category, 'parentCategoryId')
@@ -30,7 +31,7 @@ class Category extends Model  {
   childCategories?: Category[];
 
   @BelongsToMany(() => Product, () => ProductCategory)
-  products!: Array<Product & { ProductCategory: ProductCategory }>
+  products?: Array<Product & { ProductCategory: ProductCategory }>
 }
 
 export default Category;
