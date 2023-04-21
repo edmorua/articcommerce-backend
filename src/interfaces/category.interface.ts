@@ -1,6 +1,6 @@
-import ProductI from "./product.interface";
+import { ProductI } from "./product.interface";
 
-interface CategoryI {
+export interface CategoryI {
   name: string;
   code: string;
   parentCategoryId?: number
@@ -9,4 +9,3 @@ interface CategoryI {
   products?: ProductI[];
 }
 
-export default CategoryI;

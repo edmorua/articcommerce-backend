@@ -1,6 +1,6 @@
-import UserI from "./user.interface";
+import { UserI } from "./user.interface";
 
-interface AddressI {
+export interface AddressI {
   id: number;
   state: string;
   city: string;
@@ -13,5 +13,3 @@ interface AddressI {
   userId?: number;
   user?: UserI
 }
-
-export default AddressI;

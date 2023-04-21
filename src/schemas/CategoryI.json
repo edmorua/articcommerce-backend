@@ -1,0 +1,55 @@
+{
+  "$ref": "#/definitions/CategoryI",
+  "definitions": {
+    "CategoryI": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "parentCategoryId": {
+          "type": "number"
+        },
+        "parentCategory": {
+          "$ref": "#/definitions/CategoryI"
+        },
+        "childCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryI"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductI"
+          }
+        }
+      }
+    },
+    "ProductI": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "imageURL": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

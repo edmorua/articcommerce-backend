@@ -1,6 +1,6 @@
-import AddressI from "./address.interface";
+import { AddressI } from "./address.interface";
 
-interface UserI {
+export interface UserI {
   id: number;
   name: string;
   username: string;
@@ -11,5 +11,3 @@ interface UserI {
   birthDate: Date;
   address: AddressI[];
 }
-
-export default UserI;

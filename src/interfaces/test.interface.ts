@@ -1,4 +1,4 @@
-interface Test {
+export interface Test {
   name: string,
   color: string,
   size: number,
@@ -6,4 +6,3 @@ interface Test {
   date: Date,
 }
 
-export default Test
