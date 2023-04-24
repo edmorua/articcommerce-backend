@@ -1,9 +1,11 @@
 import express from 'express';
 import userController from '../controllers/user.controller';
+import * as userSchema from '../schemas/UserI.json';
+import validateSchema from '../middlewares/SchemaValidator';
 
 const userRoute = express.Router();
 
-userRoute.post('/', async (req: express.Request, res: express.Response) => {
+userRoute.post('/',validateSchema(userSchema),async (req: express.Request, res: express.Response) => {
   return await userController.createUser(req, res);
 });
 

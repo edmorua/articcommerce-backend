@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_PATH=./build node build/index.js",
     "build": "tsc -p .",
-    "dev": "nodemon src/index.ts"
+    "dev": "npx ts-node src/generateSchemas.ts && nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,9 @@
     "typescript-json-schema": "^0.56.0"
   },
   "dependencies": {
+    "@types/ajv": "^1.0.0",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
     "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

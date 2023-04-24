@@ -4,6 +4,9 @@ export interface AddressI {
   id: number;
   state: string;
   city: string;
+  /**
+   * @minLength 5 
+   */
   zipCode: string;
   street: string;
   neighborhood: string;

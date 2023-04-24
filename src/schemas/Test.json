@@ -18,5 +18,12 @@
       "format": "date-time"
     }
   },
+  "required": [
+    "color",
+    "date",
+    "id",
+    "name",
+    "size"
+  ],
   "$schema": "http://json-schema.org/draft-07/schema#"
 }
