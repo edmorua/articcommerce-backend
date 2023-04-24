@@ -1,6 +1,6 @@
 import User from '../models/user.model';
 import Address from '../models/address.model';
-import UserI from '../interfaces/user.interface';
+import { UserI } from '../interfaces/user.interface';
 
 class UserService {
   async create(user: UserI): Promise<User> {

@@ -1,5 +1,5 @@
 import User from "../models/user.model";
-import AddressI from "../interfaces/address.interface";
+import { AddressI } from "../interfaces/address.interface";
 import Address from "../models/address.model";
 import { ErrorResponse } from "../utils/Error";
 

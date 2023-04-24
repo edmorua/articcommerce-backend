@@ -1,7 +1,7 @@
 import { Table, Model, Column, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import User from './user.model';
 import { Optional } from 'sequelize';
-import AddressI from 'interfaces/address.interface';
+import { AddressI } from '../interfaces/address.interface';
 
 interface AddressAttributes extends Optional<AddressI, 'id'> { }
 

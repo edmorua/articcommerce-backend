@@ -2,7 +2,7 @@
 import { Table, Column, DataType, HasMany, Model } from "sequelize-typescript";
 import { Optional } from "sequelize";
 import Address from "./address.model";
-import UserI from "../interfaces/user.interface";
+import { UserI } from "../interfaces/user.interface";
 
 interface UserAttributes extends Optional<UserI, 'id'> {}
 @Table({

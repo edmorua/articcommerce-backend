@@ -1,5 +1,5 @@
-import Category from "models/category.model";
-import CategoryI from "../interfaces/category.interface";
+import Category from "../models/category.model";
+import { CategoryI } from "../interfaces/category.interface";
 
 class CategoryService {
   async create(category: CategoryI): Promise<CategoryI> {
