@@ -1,6 +1,7 @@
 import express from 'express';
 import Test  from '../models/test.model';
 import testService from '../services/test.service';
+import { reportError } from '../utils/Error';
 
 class TestController {
   async getTestById(req: express.Request, res: express.Response) {
@@ -25,6 +26,15 @@ class TestController {
   async getAll(res: express.Response) {
     const allTest = await testService.getAllTest();
     return res.status(200).json(allTest);
+  }
+
+  async fillDevDB(req: express.Request, res: express.Response) {
+    try {
+      const response = await testService.fillDevDB();
+      return res.status(200).json(response);
+    } catch (error) {
+      return reportError(error, res);
+    }
   }
 }
 const testController = new TestController();

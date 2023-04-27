@@ -6,7 +6,7 @@ import { UserI } from "../interfaces/user.interface";
 
 interface UserAttributes extends Optional<UserI, 'id'> {}
 @Table({
-  timestamps: false,
+  timestamps: true,
   tableName: "User",
 })
 export default class User extends Model<UserI,UserAttributes> {

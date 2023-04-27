@@ -15,4 +15,7 @@ testRoute.post('/', async (req: express.Request, res: express.Response) => {
   return await testController.createTest(req, res);
 })
 
+testRoute.post('/dev', async (req: express.Request, res: express.Response) => {
+  return await testController.fillDevDB(req, res);
+})
 export default testRoute;

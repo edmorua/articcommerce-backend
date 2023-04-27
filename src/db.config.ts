@@ -8,6 +8,6 @@ const sequelize = new Sequelize({
   port: Number(process.env.DB_PORT) || 5432,
   host: process.env.DB_HOST || "db",
   models: [__dirname + '/models/**.model.ts'],
-  //sync: { force: true }
+  sync: { force: true }
 });
 export default sequelize;

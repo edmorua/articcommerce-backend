@@ -12,7 +12,6 @@ function validateSchema(schema: object) {
         const valid = validate(req.body);
         if (!valid) {
             const errors = validate.errors as ErrorObject[];
-            console.log(errors);
             return res.status(400).json({ errors });
         }
         next();

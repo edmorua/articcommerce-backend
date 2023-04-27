@@ -10,9 +10,6 @@
         "name": {
           "type": "string"
         },
-        "username": {
-          "type": "string"
-        },
         "password": {
           "type": "string"
         },
@@ -46,8 +43,7 @@
         "email",
         "name",
         "password",
-        "role",
-        "username"
+        "role"
       ]
     },
     "AddressI": {

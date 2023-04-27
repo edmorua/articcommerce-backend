@@ -16,6 +16,15 @@ class TestService {
     const allTest = await Test.findAll();
     return allTest;
   }
+
+  async fillDevDB(): Promise<Boolean>{
+    try {
+      
+      return true;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default new TestService();

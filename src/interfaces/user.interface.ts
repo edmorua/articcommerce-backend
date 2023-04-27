@@ -3,7 +3,6 @@ import { AddressI } from "./address.interface";
 export interface UserI {
   id?: number;
   name: string;
-  username: string;
   password: string;
   /**
    * @pattern ^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$
