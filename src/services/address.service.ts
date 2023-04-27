@@ -1,14 +1,14 @@
-import User from "../models/user.model";
+import User from "../models/client.model";
 import { AddressI } from "../interfaces/address.interface";
 import Address from "../models/address.model";
 import { ErrorResponse } from "../utils/Error";
 
 class AddressService {
-  async create(address: AddressI, userId: number ): Promise<Address> {
+  async create(address: AddressI, clientId: number ): Promise<Address> {
     try {
-      const user = await User.findByPk(userId);
+      const user = await User.findByPk(clientId);
       if (!user) {
-        throw new ErrorResponse(400, `User is not found with user id  ${userId}`);
+        throw new ErrorResponse(400, `Client is not found with client id  ${clientId}`);
       }
       await user.$create('address', { ...address });
       const listAddress: Address[] = await user.$get('address') as Address[];

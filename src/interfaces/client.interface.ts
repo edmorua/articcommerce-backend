@@ -1,6 +1,6 @@
 import { AddressI } from "./address.interface";
 
-export interface UserI {
+export interface ClientI {
   id?: number;
   name: string;
   password: string;
@@ -9,7 +9,7 @@ export interface UserI {
    */
   email: string;
   profileURL?: string;
-  role: "ADMIN" | "CLIENT";
+  role: "ADMIN" | "CUSTOMER";
   birthDate: Date;
   address?: AddressI[];
 }

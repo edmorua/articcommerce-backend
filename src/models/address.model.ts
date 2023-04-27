@@ -1,5 +1,5 @@
 import { Table, Model, Column, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import User from './user.model';
+import User from './client.model';
 import { Optional } from 'sequelize';
 import { AddressI } from '../interfaces/address.interface';
 
@@ -59,7 +59,7 @@ class Address extends Model<AddressAttributes> {
   exteriorCode!: string;
 
   @ForeignKey(() => User)
-  userId!: number;
+  clientId!: number;
 
   @BelongsTo(() => User)
   user!: User;

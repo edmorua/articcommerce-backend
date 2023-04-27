@@ -7,8 +7,8 @@ class AddressController {
     const data = req.body;
     try {
       if (!data) throw new ErrorResponse(400, 'No body found in the request');
-      const { address, userId } = data;
-      const newAddress = await addressService.create(address, userId);
+      const { address, clientId } = data;
+      const newAddress = await addressService.create(address, clientId);
       return res.status(201).json(newAddress);
     } catch (error) {
       return reportError(error, res);

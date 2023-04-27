@@ -1,27 +1,27 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/user.model';
+import Client from '../models/client.model';
 import Address from '../models/address.model';
-import { UserI } from '../interfaces/user.interface';
+import { ClientI } from '../interfaces/client.interface';
 
 type LoginUser = {
-  userId: number;
+  clientId: number;
   email: string;
   name: string;
   role: string;
   token: string;
 }
-class UserService {
-  async create(user: UserI): Promise<LoginUser> {
+class ClientService {
+  async create(client: ClientI): Promise<LoginUser> {
     try {
-      const userToSave = { ...user };
-      userToSave.password = await bcrypt.hash(userToSave.password, 10);
-      const newUser: User = (await User.create({ ...userToSave }));
+      const clinetToSave = { ...client };
+      clinetToSave.password = await bcrypt.hash(clinetToSave.password, 10);
+      const newUser: Client = (await Client.create({ ...clinetToSave }));
       const privateKey = process.env.SECRET_KEY || '';
       const { email, role, name } = newUser.toJSON(); 
       const token = jwt.sign({ id: newUser.id }, privateKey);
       return {
-        userId: newUser.id,
+        clientId: newUser.id,
         email,
         name,
         role,
@@ -33,9 +33,9 @@ class UserService {
     }
   }
 
-  async getUserById(id: number): Promise<User | null> {
+  async getClientById(id: number): Promise<Client | null> {
     try {
-      const user = await User.findByPk(id, { include: Address });
+      const user = await Client.findByPk(id, { include: Address });
       return user;
     } catch (error: any) {
       console.error({ error });
@@ -43,9 +43,9 @@ class UserService {
     }
   }
 
-  async getAllUsers(): Promise<User[]> {
+  async getAllClients(): Promise<Client[]> {
     try {
-      const users = await User.findAll();
+      const users = await Client.findAll();
       return users;
     } catch (error: any) {
       console.error({ error });
@@ -54,7 +54,7 @@ class UserService {
   }
   async login(email: string, password: string): Promise<LoginUser | null> {
     try {
-      const user = await User.findOne({ where: { email: email } });
+      const user = await Client.findOne({ where: { email: email } });
       if (!user) {
         throw { status: 404, message: 'User not found' };
       }
@@ -65,9 +65,9 @@ class UserService {
       }
       const privateKey = process.env.SECRET_KEY || '';
 
-      const token = jwt.sign({ userId: user.id, userRole: role }, privateKey);
+      const token = jwt.sign({ clientId: user.id, userRole: role }, privateKey);
       return {
-        userId: user.id, 
+        clientId: user.id, 
         email: email, 
         name: name, 
         role: role, 
@@ -79,5 +79,5 @@ class UserService {
     }
   }
 }
-const userService = new UserService();
-export default userService;
+const clientService = new ClientService();
+export default clientService;

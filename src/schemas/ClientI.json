@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/UserI",
+  "$ref": "#/definitions/ClientI",
   "definitions": {
     "AddressI": {
       "type": "object",
@@ -32,11 +32,11 @@
         "exteriorCode": {
           "type": "string"
         },
-        "userId": {
+        "clientId": {
           "type": "number"
         },
         "user": {
-          "$ref": "#/definitions/UserI"
+          "$ref": "#/definitions/ClientI"
         }
       },
       "required": [
@@ -49,7 +49,7 @@
         "zipCode"
       ]
     },
-    "UserI": {
+    "ClientI": {
       "type": "object",
       "properties": {
         "id": {
@@ -71,7 +71,7 @@
         "role": {
           "enum": [
             "ADMIN",
-            "CLIENT"
+            "CUSTOMER"
           ],
           "type": "string"
         },

@@ -1,4 +1,4 @@
-import { UserI } from "./user.interface";
+import { ClientI } from "./client.interface";
 
 export interface AddressI {
   id: number;
@@ -13,6 +13,6 @@ export interface AddressI {
   additionalData?: string;
   interiorCode: string;
   exteriorCode?: string;
-  userId?: number;
-  user?: UserI
+  clientId?: number;
+  user?: ClientI
 }
