@@ -1,7 +1,7 @@
 import express from 'express';
 import userController from '../controllers/user.controller';
 import * as userSchema from '../schemas/UserI.json';
-import validateSchema from '../middlewares/SchemaValidator';
+import validateSchema from '../middlewares/schemaValidator';
 
 const userRoute = express.Router();
 
