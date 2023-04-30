@@ -1,4 +1,4 @@
-import { ProductI } from "./product.interface";
+import { ProductI } from './product.interface';
 
 export interface CategoryI {
   name: string;
