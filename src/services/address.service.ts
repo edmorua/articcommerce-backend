@@ -2,7 +2,7 @@ import User from '../models/client.model';
 import { AddressI } from '../interfaces/address.interface';
 import Address from '../models/address.model';
 import { ErrorResponse } from '../utils/Error';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 class AddressService {
   async create(address: AddressI, clientId: number ): Promise<Address> {

@@ -1,7 +1,7 @@
 import express from 'express';
 import { ErrorResponse, reportError } from '../utils/Error';
 import clientService from '../services/client.service';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 class ClientController {
   async getClientById(req: express.Request, res: express.Response) {

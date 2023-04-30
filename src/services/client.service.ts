@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import Client from '../models/client.model';
 import Address from '../models/address.model';
 import { ClientI } from '../interfaces/client.interface';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 import envVars from '../envVars';
 
 type LoginUser = {

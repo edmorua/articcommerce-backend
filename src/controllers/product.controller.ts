@@ -1,7 +1,7 @@
 import express from 'express';
 import productService from '../services/product.service';
 import { ErrorResponse, reportError } from '../utils/Error';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 class ProductController {
   async createProduct(req: express.Request, res: express.Response) {

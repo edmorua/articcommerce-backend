@@ -11,21 +11,24 @@ import productRoute from './routes/product.route';
 import addressRoute from './routes/address.route';
 import envVars from './envVars';
 import categoryRoute from './routes/category.route';
+import loggerMiddleware from './middlewares/loggerMiddleware';
+import Logger from './utils/logger';
 
 const { PORT } = envVars;
 const app: Express = express();
 const exitError = 1;
 app.use(bodyParser.json());
+app.use(loggerMiddleware);
 
 async function init() {
   try {
     await sequelize.sync();
-    console.log('Successfully connecting to the database');
+    Logger.debug('Successfully connecting to the database');
     app.listen(PORT, () => {
-      console.log(`server running on port ${PORT}`);
+      Logger.debug(`server running on port ${PORT}`);
     });
   } catch (error) {
-    console.error('error', error);
+    Logger.error('error', error);
     process.exit(exitError);
   }
 }

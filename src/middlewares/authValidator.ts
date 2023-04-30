@@ -1,7 +1,7 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import { reportError } from '../utils/Error';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 
 export const authValidator =

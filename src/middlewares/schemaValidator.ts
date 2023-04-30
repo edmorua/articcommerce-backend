@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Ajv, { ErrorObject } from 'ajv';
 import addFormats from 'ajv-formats';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 
 function validateSchema(schema: object) {

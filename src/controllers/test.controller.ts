@@ -2,7 +2,7 @@ import express from 'express';
 import Test  from '../models/test.model';
 import testService from '../services/test.service';
 import { reportError } from '../utils/Error';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 class TestController {
   async getTestById(req: express.Request, res: express.Response) {

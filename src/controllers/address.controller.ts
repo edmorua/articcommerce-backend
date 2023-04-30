@@ -1,7 +1,7 @@
 import express from 'express';
 import addressService from '../services/address.service';
 import { ErrorResponse, reportError } from '../utils/Error';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 class AddressController {
   async createAddress(req: express.Request, res: express.Response) {

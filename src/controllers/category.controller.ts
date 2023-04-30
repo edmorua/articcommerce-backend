@@ -1,7 +1,7 @@
 import express from 'express';
 import categoryService from '../services/category.service';
 import { ErrorResponse, reportError } from '../utils/Error';
-import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
+import { CODES_RESPONSE } from '../utils/constants/response.code';
 
 class CategoryController {
   async createCategory(req: express.Request, res: express.Response) {
