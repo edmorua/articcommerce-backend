@@ -14,9 +14,9 @@ type LoginUser = {
 class ClientService {
   async create(client: ClientI): Promise<LoginUser> {
     try {
-      const clinetToSave = { ...client };
-      clinetToSave.password = await bcrypt.hash(clinetToSave.password, 10);
-      const newUser: Client = (await Client.create({ ...clinetToSave }));
+      const clientToSave = { ...client };
+      clientToSave.password = await bcrypt.hash(clientToSave.password, 10);
+      const newUser: Client = (await Client.create({ ...clientToSave }));
       const privateKey = process.env.SECRET_KEY || '';
       const { email, role, name } = newUser.toJSON(); 
       const token = jwt.sign({ id: newUser.id }, privateKey);
