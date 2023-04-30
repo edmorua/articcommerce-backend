@@ -3,11 +3,11 @@ import User from './client.model';
 import { Optional } from 'sequelize';
 import { AddressI } from '../interfaces/address.interface';
 
-interface AddressAttributes extends Optional<AddressI, 'id'> { }
+type AddressAttributes = Optional<AddressI, 'id'>
 
 @Table({
   timestamps: true,
-  tableName: "Address",
+  tableName: 'address',
 })
 class Address extends Model<AddressAttributes> {
   @Column({
@@ -44,7 +44,7 @@ class Address extends Model<AddressAttributes> {
     type: DataType.STRING,
     allowNull: true,
   })
-  additionalData: string | undefined
+  additionalData: string | undefined;
 
   @Column({
     type: DataType.STRING,

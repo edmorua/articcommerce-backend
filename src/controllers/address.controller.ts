@@ -1,15 +1,18 @@
 import express from 'express';
 import addressService from '../services/address.service';
 import { ErrorResponse, reportError } from '../utils/Error';
+import { CODES_RESPONSE } from '../utils/constants/respoonse.code';
 
 class AddressController {
   async createAddress(req: express.Request, res: express.Response) {
     const data = req.body;
     try {
-      if (!data) throw new ErrorResponse(400, 'No body found in the request');
+      if (!data) throw new ErrorResponse(
+        CODES_RESPONSE.BAD_REQUEST,
+        'No body found in the request');
       const { address, clientId } = data;
       const newAddress = await addressService.create(address, clientId);
-      return res.status(201).json(newAddress);
+      return res.status(CODES_RESPONSE.CREATED).json(newAddress);
     } catch (error) {
       return reportError(error, res);
     }
@@ -19,9 +22,9 @@ class AddressController {
     const data = req.params;
     const { id } = data;
     try {
-      if (!id) throw new ErrorResponse(400, 'No id found in the request');
+      if (!id) throw new ErrorResponse(CODES_RESPONSE.BAD_REQUEST, 'No id found in the request');
       const address = await addressService.getAddressById(Number(id));
-      return res.status(200).json(address);
+      return res.status(CODES_RESPONSE.SUCCESS).json(address);
     } catch (error) {
       return reportError(error, res);
     }

@@ -1,13 +1,16 @@
 
-import { Table, Column, DataType, HasMany, Model } from "sequelize-typescript";
-import { Optional } from "sequelize";
-import Address from "./address.model";
-import { ClientI } from "../interfaces/client.interface";
+import { Table, Column, DataType, HasMany, Model } from 'sequelize-typescript';
+import { Optional } from 'sequelize';
+import Address from './address.model';
+import { ClientI } from '../interfaces/client.interface';
 
-interface UserAttributes extends Optional<ClientI, 'id'> {}
+const minLenghtPassword = 8;
+const maxLenghtPassword = 99;
+
+type UserAttributes = Optional<ClientI, 'id'>
 @Table({
   timestamps: true,
-  tableName: "client",
+  tableName: 'client',
 })
 export default class Client extends Model<ClientI,UserAttributes> {
   @Column({
@@ -21,12 +24,12 @@ export default class Client extends Model<ClientI,UserAttributes> {
     allowNull: true,
   })
   profileURL: string | undefined;
-  
+
   @Column({
     type: DataType.STRING,
     allowNull: false,
     validate: {
-       isEmail: true || { msg: 'Invalid Email'}
+       isEmail: true || { msg: 'Invalid Email' }
     }
   })
   email!: string;
@@ -35,7 +38,7 @@ export default class Client extends Model<ClientI,UserAttributes> {
     type: DataType.STRING,
     allowNull: false,
     validate: {
-      len: [8,99],
+      len: [minLenghtPassword,maxLenghtPassword],
     }
   })
   password!: string;

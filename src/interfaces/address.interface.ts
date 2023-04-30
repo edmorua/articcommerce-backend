@@ -1,11 +1,11 @@
-import { ClientI } from "./client.interface";
+import { ClientI } from './client.interface';
 
 export interface AddressI {
   id: number;
   state: string;
   city: string;
   /**
-   * @minLength 5 
+   * @minLength 5
    */
   zipCode: string;
   street: string;

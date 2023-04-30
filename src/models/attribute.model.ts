@@ -1,13 +1,19 @@
-import { Table, Column, Model, DataType, BelongsToMany, ForeignKey, BelongsTo } from "sequelize-typescript";
-import Product from "./product.model";
-import ProductAttribute from "./product-attribute.model";
-import Category from "./category.model";
+import { Table,
+  Column,
+  Model,
+  DataType,
+  BelongsToMany,
+  ForeignKey,
+  BelongsTo } from 'sequelize-typescript';
+import Product from './product.model';
+import ProductAttribute from './product-attribute.model';
+import Category from './category.model';
 
 @Table({
-  tableName: 'Attribute',
+  tableName: 'attribute',
   timestamps: true
 })
-class Attribute extends Model<Attribute>{
+class Attribute extends Model<Attribute> {
 
   @Column({
     type: DataType.STRING,
@@ -32,7 +38,7 @@ class Attribute extends Model<Attribute>{
     allowNull: true
   })
   valueInteger: number | undefined;
-  
+
   @Column({
     type: DataType.FLOAT,
     allowNull: true
@@ -47,7 +53,7 @@ class Attribute extends Model<Attribute>{
 
   @BelongsToMany(() => Product, () => ProductAttribute)
   products!: Product[];
-  
+
   @ForeignKey(() => Category)
   categoryId!: number;
 

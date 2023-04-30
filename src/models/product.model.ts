@@ -1,4 +1,10 @@
-import { Table, Model, Column, DataType, BelongsToMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { Table,
+  Model,
+  Column,
+  DataType,
+  BelongsToMany,
+  ForeignKey,
+  BelongsTo } from 'sequelize-typescript';
 import Category from './category.model';
 import ProductCategory from './product-category.model';
 import Attribute from './attribute.model';
@@ -6,7 +12,7 @@ import ProductAttribute from './product-attribute.model';
 
 @Table({
   timestamps: true,
-  tableName: "Product",
+  tableName: 'product',
 })
 export default class Product extends Model {
   @Column({
@@ -38,16 +44,16 @@ export default class Product extends Model {
     allowNull: true,
   })
   quantity!: number;
-    
+
   @ForeignKey(() => Category)
   mainCategoryId!: number;
-  
+
   @BelongsTo(() => Category, 'mainCategoryId')
   mainCategory?: Category;
 
   @BelongsToMany(() => Category, () => ProductCategory)
   subCategories?: Category[];
-  
+
   @BelongsToMany(() => Attribute, () => ProductAttribute)
   attributes!: Attribute[];
 }

@@ -5,7 +5,10 @@ import validateSchema from '../middlewares/schemaValidator';
 
 const clientRoute = express.Router();
 
-clientRoute.post('/sign-up',validateSchema(clientSchema),async (req: express.Request, res: express.Response) => {
+clientRoute.post(
+  '/sign-up',
+  validateSchema(clientSchema),
+  async (req: express.Request, res: express.Response) => {
   return await userController.createClient(req, res);
 });
 
@@ -19,6 +22,6 @@ clientRoute.get('/:id', async (req: express.Request, res: express.Response) => {
 
 clientRoute.post('/login', async (req: express.Request, res: express.Response) => {
   return await userController.loginClient(req, res);
-})
+});
 
 export default clientRoute;

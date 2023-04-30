@@ -1,9 +1,9 @@
 
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType } from 'sequelize-typescript';
 
 @Table({
   timestamps: false,
-  tableName: "Test",
+  tableName: 'test',
 })
 export default class Test extends Model {
   @Column({
@@ -28,7 +28,7 @@ export default class Test extends Model {
     type: DataType.DATE,
     allowNull: false,
   })
-  date!: Date
+  date!: Date;
 
 }
 

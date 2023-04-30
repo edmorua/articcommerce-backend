@@ -1,4 +1,4 @@
-import Test  from "../models/test.model";
+import Test  from '../models/test.model';
 
 
 class TestService {
@@ -8,19 +8,20 @@ class TestService {
     return newTest;
   }
 
-  async getTestById(id: number): Promise<Test | undefined | null>{
+  async getTestById(id: number): Promise<Test | undefined | null> {
     const test = await Test.findByPk(id);
     return test;
   }
-  async getAllTest(): Promise<Test[]>{
+
+  async getAllTest(): Promise<Test[]> {
     const allTest = await Test.findAll();
     return allTest;
   }
 
-  async fillDevDB(): Promise<Boolean>{
+  async fillDevDB(): Promise<boolean> {
     try {
-      
-      return true;
+
+      return await true;
     } catch (error) {
       throw error;
     }

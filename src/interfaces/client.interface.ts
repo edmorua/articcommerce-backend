@@ -1,4 +1,4 @@
-import { AddressI } from "./address.interface";
+import { AddressI } from './address.interface';
 
 export interface ClientI {
   id?: number;
@@ -9,7 +9,7 @@ export interface ClientI {
    */
   email: string;
   profileURL?: string;
-  role: "ADMIN" | "CUSTOMER";
+  role: 'ADMIN' | 'CUSTOMER';
   birthDate: Date;
   address?: AddressI[];
 }

@@ -1,5 +1,5 @@
-import Product from "../models/product.model";
-import { ProductI } from "../interfaces/product.interface";
+import Product from '../models/product.model';
+import { ProductI } from '../interfaces/product.interface';
 
 class ProductService {
   async create(product: ProductI): Promise<Product> {
@@ -19,6 +19,7 @@ class ProductService {
       throw error;
     }
   }
+
   async getAllProducts(): Promise<Product[]> {
     try {
       const products = await Product.findAll();

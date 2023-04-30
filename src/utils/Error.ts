@@ -1,7 +1,8 @@
 import express from 'express';
+import { CODES_RESPONSE } from './constants/respoonse.code';
 
 export class ErrorResponse extends Error {
-  statusCode = 500;
+  statusCode = CODES_RESPONSE.INTERNAL_ERROR;
 
   constructor(statusCode: number, message: string) {
     super(message);
@@ -13,6 +14,7 @@ export class ErrorResponse extends Error {
   getErrorCode() {
     return this.statusCode;
   }
+
   getErrorMessage() {
     return this.message;
   }
@@ -22,5 +24,7 @@ export function reportError(error: any, res: express.Response) {
   if (error instanceof ErrorResponse) {
     return res.status(error.statusCode).json({ message: error.message });
   }
-  return res.status(500).json({message: error?.message || 'internal server error' })
+  return res
+    .status(CODES_RESPONSE.INTERNAL_ERROR)
+    .json({ message: error?.message || 'internal server error' });
 }

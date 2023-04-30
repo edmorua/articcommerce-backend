@@ -8,4 +8,4 @@ export const MainRoutes = {
 
 export const ApiVersion = {
   V1: '/api/v1'
-}
+};

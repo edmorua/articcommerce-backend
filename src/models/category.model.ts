@@ -1,10 +1,17 @@
-import { Table, Model, Column, DataType, BelongsToMany, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
+import { Table,
+  Model,
+  Column,
+  DataType,
+  BelongsToMany,
+  ForeignKey,
+  BelongsTo,
+  HasMany } from 'sequelize-typescript';
 import Product from './product.model';
 import ProductCategory from './product-category.model';
 
 @Table({
   timestamps: true,
-  tableName: 'Category',
+  tableName: 'category',
 })
 class Category extends Model  {
 
@@ -31,7 +38,7 @@ class Category extends Model  {
   childCategories?: Category[];
 
   @BelongsToMany(() => Product, () => ProductCategory)
-  products?: Array<Product & { ProductCategory: ProductCategory }>
+  products?: Array<Product & { ProductCategory: ProductCategory }>;
 }
 
 export default Category;

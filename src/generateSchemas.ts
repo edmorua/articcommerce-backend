@@ -1,7 +1,8 @@
-import path from "path";
+/* eslint-disable no-magic-numbers */
+import path from 'path';
 import fs from 'fs';
 import ts from 'typescript';
-import * as TJS from "typescript-json-schema";
+import * as TJS from 'typescript-json-schema';
 
 console.log(__dirname);
 const settings = {
@@ -15,7 +16,8 @@ const compilerOptions = {
 const dirPath = path.resolve(__dirname, 'interfaces');
 const outputDir = path.resolve(__dirname, 'schemas');
 const fileNames = fs.readdirSync(dirPath).filter(fileName => fileName.endsWith('.ts'));
-const program = ts.createProgram(fileNames.map(fileName => path.join(dirPath, fileName)),compilerOptions);
+const program = ts
+  .createProgram(fileNames.map(fileName => path.join(dirPath, fileName)),compilerOptions);
 
 for (const sourceFile of program.getSourceFiles()) {
   if (!sourceFile.isDeclarationFile) {
