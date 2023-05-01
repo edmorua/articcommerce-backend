@@ -1,7 +1,8 @@
 import { CategoryI } from './category.interface';
 import { ProductI } from './product.interface';
 
-export interface AttributesI {
+export interface AttributeI {
+	id?: number;
 	name: string;
 	dataType: string;
 	valueString: string | undefined;
