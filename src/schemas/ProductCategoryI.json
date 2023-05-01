@@ -1,42 +1,6 @@
 {
-  "$ref": "#/definitions/CategoryI",
+  "$ref": "#/definitions/ProductCategoryI",
   "definitions": {
-    "CategoryI": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "number"
-        },
-        "name": {
-          "type": "string"
-        },
-        "code": {
-          "type": "string"
-        },
-        "parentCategoryId": {
-          "type": "number"
-        },
-        "parentCategory": {
-          "$ref": "#/definitions/CategoryI"
-        },
-        "childCategories": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/CategoryI"
-          }
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ProductI"
-          }
-        }
-      },
-      "required": [
-        "code",
-        "name"
-      ]
-    },
     "ProductI": {
       "type": "object",
       "properties": {
@@ -161,6 +125,42 @@
       "required": [
         "code",
         "dataType",
+        "name"
+      ]
+    },
+    "CategoryI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "parentCategoryId": {
+          "type": "number"
+        },
+        "parentCategory": {
+          "$ref": "#/definitions/CategoryI"
+        },
+        "childCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryI"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductI"
+          }
+        }
+      },
+      "required": [
+        "code",
         "name"
       ]
     },

@@ -1,28 +1,192 @@
 {
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
+  "$ref": "#/definitions/ProductI",
+  "definitions": {
+    "ProductAttributeI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "productId": {
+          "type": "number"
+        },
+        "attributeId": {
+          "type": "number"
+        },
+        "product": {
+          "$ref": "#/definitions/ProductI"
+        },
+        "attribute": {
+          "$ref": "#/definitions/AttributeI"
+        },
+        "valueString": {
+          "type": "string"
+        },
+        "valueInteger": {
+          "type": "number"
+        },
+        "valueFloat": {
+          "type": "number"
+        },
+        "valueDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "attributeId"
+      ]
     },
-    "sku": {
-      "type": "string"
+    "ProductI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "imageURLs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductAttributeI"
+          }
+        },
+        "parentCategoryId": {
+          "type": "number"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductCategoryI"
+          }
+        }
+      },
+      "required": [
+        "attributes",
+        "categories",
+        "code",
+        "name",
+        "parentCategoryId",
+        "price",
+        "quantity",
+        "sku"
+      ]
     },
-    "code": {
-      "type": "string"
+    "ProductCategoryI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "categoryId": {
+          "type": "number"
+        },
+        "productId": {
+          "type": "number"
+        },
+        "product": {
+          "$ref": "#/definitions/ProductI"
+        },
+        "category": {
+          "$ref": "#/definitions/CategoryI"
+        }
+      },
+      "required": [
+        "categoryId"
+      ]
     },
-    "price": {
-      "type": "number"
+    "CategoryI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "parentCategoryId": {
+          "type": "number"
+        },
+        "parentCategory": {
+          "$ref": "#/definitions/CategoryI"
+        },
+        "childCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryI"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductI"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name"
+      ]
     },
-    "imageURL": {
-      "type": "string"
+    "AttributeI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "dataType": {
+          "type": "string"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductI"
+          }
+        },
+        "categoryId": {
+          "type": "number"
+        },
+        "category": {
+          "$ref": "#/definitions/CategoryI"
+        }
+      },
+      "required": [
+        "code",
+        "dataType",
+        "name"
+      ]
     }
   },
-  "required": [
-    "code",
-    "imageURL",
-    "name",
-    "price",
-    "sku"
-  ],
   "$schema": "http://json-schema.org/draft-07/schema#"
 }
