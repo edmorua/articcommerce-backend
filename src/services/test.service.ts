@@ -1,4 +1,11 @@
 import Test  from '../models/test.model';
+import { products } from '../mock_data/product';
+import { Customers } from '../mock_data/clients';
+import { parentCategories,
+  proteinSubCategories,
+  suplementesSubCategories,
+  vitaminisSubCategories } from '../mock_data/categories';
+import { attributes } from '../mock_data/attributes';
 
 
 class TestService {
