@@ -45,6 +45,12 @@ export default class Product extends Model {
   })
   quantity!: number;
 
+  @Column({
+    type: DataType.ARRAY(DataType.STRING),
+    allowNull: true,
+  })
+  imageURLs?: string[];
+
   @ForeignKey(() => Category)
   mainCategoryId!: number;
 

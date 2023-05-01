@@ -3,10 +3,10 @@ import { ProductI } from './product.interface';
 
 export interface ProductAttributeI {
 	id?: number;
-	productId: number;
+	productId?: number;
 	attributeId: number;
-	product: ProductI;
-  attribute: AttributeI;
+	product?: ProductI;
+  attribute?: AttributeI;
 	valueString?: string | undefined;
 	valueInteger?: number | undefined;
 	valueFloat?: number | undefined;
