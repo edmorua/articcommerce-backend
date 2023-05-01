@@ -5,6 +5,7 @@ import Address from '../models/address.model';
 import { ClientI } from '../interfaces/client.interface';
 import { CODES_RESPONSE } from '../utils/constants/response.code';
 import envVars from '../envVars';
+import Logger from '../utils/logger';
 
 type LoginUser = {
   clientId: number;
@@ -30,7 +31,7 @@ class ClientService {
         token
       };
     } catch (error: any) {
-      console.error({ error });
+      Logger.error({ error });
       throw { status: error?.status || CODES_RESPONSE.INTERNAL_ERROR, message: error?.message };
     }
   }

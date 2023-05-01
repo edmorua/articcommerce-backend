@@ -12,6 +12,7 @@ export const products: ProductI[] = [
 			'https://m.media-amazon.com/images/I/71VMUEMihPL._AC_SX679_.jpg',
 			'https://m.media-amazon.com/images/I/61rr-7ijYdL._AC_SX679_.jpg'
 		],
+		quantity: 110,
 		parentCategoryId: 1,
 		categories: [
 			{
@@ -47,6 +48,7 @@ export const products: ProductI[] = [
 		code: 'P2',
 		price: 950,
 		parentCategoryId: 1,
+		quantity: 20,
 		categories: [
 			{
 				categoryId: 5
@@ -81,6 +83,7 @@ export const products: ProductI[] = [
 		code: 'p3',
 		price: 950,
 		parentCategoryId: 1,
+		quantity: 2,
 		categories: [
 			{
 				categoryId: 6
@@ -115,6 +118,7 @@ export const products: ProductI[] = [
 		code: 'p4',
 		price: 950,
 		parentCategoryId: 1,
+		quantity: 34,
 		categories: [
 			{
 				categoryId: 7
@@ -149,6 +153,7 @@ export const products: ProductI[] = [
 		code: 'p5',
 		price: 950,
 		parentCategoryId: 1,
+		quantity: 16,
 		categories: [
 			{
 				categoryId: 8
@@ -183,6 +188,7 @@ export const products: ProductI[] = [
 		code: 'p6',
 		price: 950,
 		parentCategoryId: 1,
+		quantity: 1,
 		categories: [
 			{
 				categoryId: 9

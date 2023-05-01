@@ -1,6 +1,6 @@
 import { ClientI } from '../interfaces/client.interface';
 
-export const Customers: ClientI[] = [
+export const clients: ClientI[] = [
   {
     name: 'Eduardo Ruiz Test1',
     email: 'eduardo.ruiz.test1@gmail.com',
