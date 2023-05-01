@@ -23,33 +23,24 @@ class Attribute extends Model<Attribute> {
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: true
   })
-  dataType!: string;
+  code!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true
   })
-  valueString: string | undefined;
+  description?: string;
 
   @Column({
-    type: DataType.INTEGER,
-    allowNull: true
+    type: DataType.STRING,
+    allowNull: false,
+    validate: {
+      isIn: [['string', 'integer', 'float', 'date']]
+    }
   })
-  valueInteger: number | undefined;
-
-  @Column({
-    type: DataType.FLOAT,
-    allowNull: true
-  })
-  valueFloat: number | undefined;
-
-  @Column({
-    type: DataType.DATE,
-    allowNull: true
-  })
-  valueDate: Date | undefined;
+  dataType!: string;
 
   @BelongsToMany(() => Product, () => ProductAttribute)
   products!: Product[];

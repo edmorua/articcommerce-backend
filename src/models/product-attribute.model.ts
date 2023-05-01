@@ -1,4 +1,4 @@
-import { Table, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { Table, Model, ForeignKey, BelongsTo, Column, DataType } from 'sequelize-typescript';
 import Product from './product.model';
 import Attribute from './attribute.model';
 
@@ -7,6 +7,30 @@ import Attribute from './attribute.model';
 	timestamps: true,
 })
 class ProductAttribute extends Model {
+	@Column({
+    type: DataType.STRING,
+    allowNull: true
+  })
+  valueString: string | undefined;
+
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: true
+  })
+  valueInteger: number | undefined;
+
+  @Column({
+    type: DataType.FLOAT,
+    allowNull: true
+  })
+  valueFloat: number | undefined;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: true
+  })
+  valueDate: Date | undefined;
+
   @ForeignKey(() => Product)
   	productId!: number;
 

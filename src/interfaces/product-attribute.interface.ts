@@ -7,4 +7,8 @@ export interface ProductAttributeI {
 	attributeId: number;
 	product: ProductI;
   attribute: AttributeI;
+	valueString?: string | undefined;
+	valueInteger?: number | undefined;
+	valueFloat?: number | undefined;
+	valueDate?: Date | undefined;
 }
