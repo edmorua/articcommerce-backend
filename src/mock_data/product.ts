@@ -5,7 +5,7 @@ export const products: ProductI[] = [
 		name: 'Proteina 1',
 		sku: 'p1',
 		code: 'p1',
-		price: 950,
+		price: 950.50,
 		imageURLs: [
 			'https://m.media-amazon.com/images/I/61GDn0-MvwL._AC_SY879_.jpg',
 			'https://m.media-amazon.com/images/I/81ZCbTIdE+L._AC_SX679_.jpg',
@@ -46,8 +46,14 @@ export const products: ProductI[] = [
 		name: 'Proteina 2',
 		sku: 'P2',
 		code: 'P2',
-		price: 950,
+		price: 1220,
 		parentCategoryId: 1,
+		imageURLs: [
+			'https://m.media-amazon.com/images/I/61GDn0-MvwL._AC_SY879_.jpg',
+			'https://m.media-amazon.com/images/I/81ZCbTIdE+L._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/71VMUEMihPL._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/61rr-7ijYdL._AC_SX679_.jpg'
+		],
 		quantity: 20,
 		categories: [
 			{
@@ -81,9 +87,15 @@ export const products: ProductI[] = [
 		name: 'Proteina 3',
 		sku: 'p3',
 		code: 'p3',
-		price: 950,
+		price: 1550,
 		parentCategoryId: 1,
 		quantity: 2,
+		imageURLs: [
+			'https://m.media-amazon.com/images/I/61GDn0-MvwL._AC_SY879_.jpg',
+			'https://m.media-amazon.com/images/I/81ZCbTIdE+L._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/71VMUEMihPL._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/61rr-7ijYdL._AC_SX679_.jpg'
+		],
 		categories: [
 			{
 				categoryId: 6
@@ -116,8 +128,14 @@ export const products: ProductI[] = [
 		name: 'Proteina 4',
 		sku: 'p4',
 		code: 'p4',
-		price: 950,
+		price: 4050,
 		parentCategoryId: 1,
+		imageURLs: [
+			'https://m.media-amazon.com/images/I/61GDn0-MvwL._AC_SY879_.jpg',
+			'https://m.media-amazon.com/images/I/81ZCbTIdE+L._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/71VMUEMihPL._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/61rr-7ijYdL._AC_SX679_.jpg'
+		],
 		quantity: 34,
 		categories: [
 			{
@@ -151,8 +169,14 @@ export const products: ProductI[] = [
 		name: 'Proteina 5',
 		sku: 'p5',
 		code: 'p5',
-		price: 950,
+		price: 1000,
 		parentCategoryId: 1,
+		imageURLs: [
+			'https://m.media-amazon.com/images/I/61GDn0-MvwL._AC_SY879_.jpg',
+			'https://m.media-amazon.com/images/I/81ZCbTIdE+L._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/71VMUEMihPL._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/61rr-7ijYdL._AC_SX679_.jpg'
+		],
 		quantity: 16,
 		categories: [
 			{
@@ -186,7 +210,13 @@ export const products: ProductI[] = [
 		name: 'Proteina 6',
 		sku: 'p6',
 		code: 'p6',
-		price: 950,
+		price: 3500.50,
+		imageURLs: [
+			'https://m.media-amazon.com/images/I/61GDn0-MvwL._AC_SY879_.jpg',
+			'https://m.media-amazon.com/images/I/81ZCbTIdE+L._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/71VMUEMihPL._AC_SX679_.jpg',
+			'https://m.media-amazon.com/images/I/61rr-7ijYdL._AC_SX679_.jpg'
+		],
 		parentCategoryId: 1,
 		quantity: 1,
 		categories: [

@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import Test  from '../models/test.model';
 import Category from '../models/category.model';
 import Attribute from '../models/attribute.model';
@@ -92,7 +93,13 @@ class TestService {
       let productsSaved = productsModelSaved.map((product) => {
         return product.toJSON() as ProductI;
       });
-      productsSaved = [...productsSaved, ...products];
+
+      productsSaved = productsSaved.map((product, index) => {
+        return {
+          ...product,
+          ...products[index]
+        };
+      });
       const productCategories: ProductCategoryI[] = [];
       productsSaved.forEach((product) => {
         product.categories.forEach((category) => {
@@ -117,6 +124,10 @@ class TestService {
         });
       });
       await ProductAttribute.bulkCreate(productAttributes as any);
+      const test = await Product.update({ imageURLs: products[0].imageURLs }, {
+        where: { id: 1 },
+      });
+      Logger.debug({ test });
       return await true;
     } catch (error: any) {
       Logger.error({ error });

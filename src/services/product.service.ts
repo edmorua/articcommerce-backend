@@ -1,5 +1,7 @@
 import Product from '../models/product.model';
 import { ProductI } from '../interfaces/product.interface';
+import Attribute from '../models/attribute.model';
+import Category from '../models/category.model';
 
 class ProductService {
   async create(product: ProductI): Promise<Product> {
@@ -22,7 +24,20 @@ class ProductService {
 
   async getAllProducts(): Promise<Product[]> {
     try {
-      const products = await Product.findAll();
+      const products = await Product
+        .findAll({
+          include: [{
+            model: Attribute,
+            as: 'attributes'
+          }, {
+            model: Category,
+            as: 'parentCategory',
+            foreignKey: 'parentCategoryId',
+          }, {
+            model: Category,
+            as: 'subCategories',
+          }]
+        });
       return products;
     } catch (error) {
       throw error;

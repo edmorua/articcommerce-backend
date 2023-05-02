@@ -49,13 +49,13 @@ export default class Product extends Model {
     type: DataType.ARRAY(DataType.STRING),
     allowNull: true,
   })
-  imageURLs?: string[];
+  imageURLs?: Array<string>;
 
   @ForeignKey(() => Category)
-  mainCategoryId!: number;
+  parentCategoryId!: number;
 
-  @BelongsTo(() => Category, 'mainCategoryId')
-  mainCategory?: Category;
+  @BelongsTo(() => Category, 'parentCategoryId')
+  parentCategory?: Category;
 
   @BelongsToMany(() => Category, () => ProductCategory)
   subCategories?: Category[];
