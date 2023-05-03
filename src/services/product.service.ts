@@ -2,6 +2,8 @@ import Product from '../models/product.model';
 import { ProductI } from '../interfaces/product.interface';
 import Attribute from '../models/attribute.model';
 import Category from '../models/category.model';
+import Logger from '../utils/logger';
+
 
 class ProductService {
   async create(product: ProductI): Promise<Product> {
@@ -24,11 +26,16 @@ class ProductService {
 
   async getAllProducts(): Promise<Product[]> {
     try {
-      const products = await Product
+      const productsDb = await Product
         .findAll({
           include: [{
             model: Attribute,
-            as: 'attributes'
+            as: 'attributes',
+            attributes: [['id', 'attributeId'],'name', 'code','description', 'dataType'],
+            through: {
+              as: 'value',
+              attributes: ['valueString', 'valueInteger', 'valueFloat', 'valueDate'],
+            }
           }, {
             model: Category,
             as: 'parentCategory',
@@ -38,7 +45,8 @@ class ProductService {
             as: 'subCategories',
           }]
         });
-      return products;
+      Logger.debug('Fetching products successfully');
+      return productsDb;
     } catch (error) {
       throw error;
     }

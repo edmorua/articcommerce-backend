@@ -1,60 +1,6 @@
 {
   "$ref": "#/definitions/AttributeI",
   "definitions": {
-    "ProductI": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "number"
-        },
-        "name": {
-          "type": "string"
-        },
-        "sku": {
-          "type": "string"
-        },
-        "code": {
-          "type": "string"
-        },
-        "price": {
-          "type": "number"
-        },
-        "quantity": {
-          "type": "number"
-        },
-        "imageURLs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "attributes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ProductAttributeI"
-          }
-        },
-        "parentCategoryId": {
-          "type": "number"
-        },
-        "categories": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ProductCategoryI"
-          }
-        }
-      },
-      "required": [
-        "attributes",
-        "categories",
-        "code",
-        "name",
-        "parentCategoryId",
-        "price",
-        "quantity",
-        "sku"
-      ]
-    },
     "ProductAttributeI": {
       "type": "object",
       "properties": {
@@ -91,6 +37,60 @@
         "attributeId"
       ]
     },
+    "ProductI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "imageURLs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AttributeI"
+          }
+        },
+        "parentCategoryId": {
+          "type": "number"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductCategoryI"
+          }
+        }
+      },
+      "required": [
+        "attributes",
+        "categories",
+        "code",
+        "name",
+        "parentCategoryId",
+        "price",
+        "quantity",
+        "sku"
+      ]
+    },
     "AttributeI": {
       "type": "object",
       "properties": {
@@ -108,6 +108,9 @@
         },
         "dataType": {
           "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/ProductAttributeI"
         },
         "products": {
           "type": "array",

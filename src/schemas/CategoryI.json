@@ -67,7 +67,7 @@
         "attributes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ProductAttributeI"
+            "$ref": "#/definitions/AttributeI"
           }
         },
         "parentCategoryId": {
@@ -89,6 +89,46 @@
         "price",
         "quantity",
         "sku"
+      ]
+    },
+    "AttributeI": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "dataType": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/ProductAttributeI"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductI"
+          }
+        },
+        "categoryId": {
+          "type": "number"
+        },
+        "category": {
+          "$ref": "#/definitions/CategoryI"
+        }
+      },
+      "required": [
+        "code",
+        "dataType",
+        "name"
       ]
     },
     "ProductAttributeI": {
@@ -125,43 +165,6 @@
       },
       "required": [
         "attributeId"
-      ]
-    },
-    "AttributeI": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "number"
-        },
-        "name": {
-          "type": "string"
-        },
-        "code": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "dataType": {
-          "type": "string"
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ProductI"
-          }
-        },
-        "categoryId": {
-          "type": "number"
-        },
-        "category": {
-          "$ref": "#/definitions/CategoryI"
-        }
-      },
-      "required": [
-        "code",
-        "dataType",
-        "name"
       ]
     },
     "ProductCategoryI": {

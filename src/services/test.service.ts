@@ -128,6 +128,7 @@ class TestService {
         where: { id: 1 },
       });
       Logger.debug({ test });
+      Logger.debug('Finished updating');
       return await true;
     } catch (error: any) {
       Logger.error({ error });
